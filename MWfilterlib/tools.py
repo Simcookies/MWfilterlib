@@ -1,4 +1,5 @@
 import math
+from math import pi as PI
 
 def butterworth(n):
     g = [1.0]
@@ -23,3 +24,4 @@ def chebyshey(n, ripple):
     else:
         g.append(1.0)
     return g
+
