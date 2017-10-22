@@ -1,5 +1,6 @@
 import math
-PI = math.pi
+from math import pi as PI
+from .g import butterworth, chebyshey
 
 class LPF:
     def __init__(self, fc, gama = 50):
@@ -14,9 +15,3 @@ class LPF:
     def cal_C(self,g):
         C = 1.0/self.wc*g/self.gama
         return round(C*1e12, 3)
-
-lpf = LPF(3.260)
-
-print()
-print(lpf.cal_L(2), "nH")
-print(lpf.cal_C(1), "pF")

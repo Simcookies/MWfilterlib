@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import math
 from math import pi as PI
-from g import butterworth, chebyshey
+from .g import butterworth, chebyshey
 
 class BSF:
     # initialize class.

@@ -1,5 +1,6 @@
 import math
-PI = math.pi
+from math import pi as PI
+from .g import butterworth, chebyshey
 
 class BPF:
     def __init__(self, f0, dw, gama = 50):
@@ -17,16 +18,3 @@ class BPF:
         C = 1.0/(self.dw*self.gama)*g
         L = 1/math.pow(self.w0,2)/C
         return round(L*1e9, 3), round(C*1e12, 3)
-
-f0 = 3.261
-BW = 0.5
-bpf = BPF(f0, BW)
-
-L1, C1, = bpf.cal_parallel(1)
-L2, C2, = bpf.cal_series(2)
-L3, C3, = bpf.cal_parallel(1)
-
-print()
-print("g1:", L1, "nH", C1, "pF")
-print("g2:", L2, "nH", C2, "pF")
-print("g3:", L3, "nH", C3, "pF")
